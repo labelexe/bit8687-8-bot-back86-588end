@@ -39,7 +39,7 @@ mongoose.connect(mongoUrl)
 app.use("/api", userRoute);
 app.use("/api/trader", traderRoute);
 
-const PORT = process.env.PORT || 6000;
+const PORT = process.env.PORT || 3233;
 
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);
