@@ -1,6 +1,9 @@
 import { RequestHandler, Request, Response } from "express";
 import UserModel from '../models/UserModel';
 
+export const test: RequestHandler = (req: Request, res: Response) => {
+    res.status(200).json("backend deployed!!!!");
+}
 export const signin: RequestHandler = (req: Request, res: Response) => {
     const { email, password } = req.body;
     UserModel.findOne({ email, password }).then((item: any) => {
