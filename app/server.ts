@@ -10,7 +10,17 @@ import mongoose from "mongoose";
 dotenv.config();
 const app: Application = express();
 
-app.use(cors({ origin: true }));
+var corsOption = {
+  origin: `*`,
+  methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
+  credentials: true,
+  exposedHeaders: ["x-auth-token"],
+  url: [
+    "https://localhost:5000",
+    "https://54.145.61.200:5000",
+  ],
+};
+app.use(cors(corsOption));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
